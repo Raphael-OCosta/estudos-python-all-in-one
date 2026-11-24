@@ -1,0 +1,53 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Guia Python All-in-One</title><style>
+@page{size:A4;margin:16mm 15mm 18mm 15mm}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"Segoe UI",Calibri,Arial,sans-serif;color:#1f2933;font-size:11pt;line-height:1.55;margin:0}
+.pg{break-after:page}.capa{height:250mm;display:flex;flex-direction:column;justify-content:center;
+background:linear-gradient(160deg,#2f2a6b,#2f7d6d);color:#fff;border-radius:10px;padding:0 16mm}
+.capa .tag{letter-spacing:.2em;text-transform:uppercase;font-size:10pt;opacity:.85}
+.capa h1{font-size:30pt;margin:4mm 0 2mm;line-height:1.15}.capa h2{font-weight:400;font-size:15pt;color:#fff;border:0;margin:0 0 10mm}
+.capa .lema{font-size:13pt;border-left:4px solid #9fe0c9;padding-left:5mm;max-width:145mm}
+h2{color:#2f2a6b;font-size:18pt;margin:0 0 4mm;padding-bottom:2mm;border-bottom:2px solid #e6eef6}
+h3{color:#2f2a6b;font-size:13pt;margin:6mm 0 2mm}code{font-family:Consolas,monospace;font-size:9.3pt;background:#f2f5f8;padding:0 4px;border-radius:3px}
+kbd{border:1px solid #c9d2db;border-bottom-width:2px;border-radius:4px;padding:0 5px;font-size:9.5pt}
+.passo{display:flex;gap:4mm;margin:0 0 3.5mm;break-inside:avoid}.n{flex:0 0 9mm;height:9mm;border-radius:50%;background:#2f2a6b;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.box{border-radius:7px;padding:3mm 5mm;margin:3mm 0;break-inside:avoid}.dica{background:#e8f5ee;border-left:4px solid #2e7d5b}.aviso{background:#fff5df;border-left:4px solid #a86b00}
+table{border-collapse:collapse;width:100%;font-size:9.8pt;margin:2mm 0}th{background:#2f2a6b;color:#fff;text-align:left;padding:2mm}
+td{padding:1.6mm 2mm;border-bottom:1px solid #e3e8ee;vertical-align:top}tr:nth-child(even) td{background:#f7f9fb}.p{color:#5b6b7a;font-size:9pt}
+.linha{display:flex;gap:3mm;margin:2mm 0}.min{flex:0 0 22mm;font-weight:700;color:#2f7d6d}
+</style></head><body>
+<section class="pg capa"><div class="tag">Guia de estudos · trilha prática</div>
+<h1>Python All-in-One For Dummies</h1><h2>John Shovic e Alan Simpson (edição em inglês) — do zero ao robô autônomo</h2>
+<p class="lema">Menos leitura, mais construção: cada capítulo é uma missão que acrescenta uma peça ao rover Aurora, um robô
+virtual que explora Marte. No fim você terá painel, sensores, comandos, diário, rede, IA, análise de dados, hardware simulado e um cérebro autônomo, tudo escrito por você.</p></section>
+
+<section class="pg"><h2>1. Como a trilha funciona</h2>
+<div class="passo"><div class="n">1</div><div><b>Missão</b>: o topo de cada caderno diz o que você vai construir e por quê.</div></div>
+<div class="passo"><div class="n">2</div><div><b>Leitura essencial (opcional)</b>: só as seções que importam, com a página do PDF em inglês. Leia quando um passo gerar dúvida, não antes.</div></div>
+<div class="passo"><div class="n">3</div><div><b>Passos</b>: uma explicação curta e uma célula vazia. Digite, rode com <kbd>Shift</kbd>+<kbd>Enter</kbd> e veja o resultado.</div></div>
+<div class="passo"><div class="n">4</div><div><b>Módulos do projeto</b>: os passos com <code>%%writefile</code> gravam arquivos em <code>meu_rover/</code>. Os capítulos seguintes importam esses arquivos, então faça na ordem.</div></div>
+<div class="passo"><div class="n">5</div><div><b>Gabarito</b> em <code>resolvidos/</code>, com o mesmo passo pronto. Travou por mais de 10 minutos? Olhe, entenda e digite de novo sem copiar.</div></div>
+<h3>Sem hardware, sem nuvem</h3>
+<p>O livro usa Raspberry Pi, sensores Grove, um kit de robô, TensorFlow e o BigQuery do Google. Aqui tudo roda no seu notebook: o hardware é simulado com o mesmo comportamento (I2C, PWM, servo, motor de passo), a IA usa NumPy e scikit-learn, e os "dados grandes" são gerados localmente (1 milhão de linhas).</p>
+<div class="box aviso">Os capítulos 1 a 8 são a base da linguagem e valem para tudo. Do 9 em diante, cada capítulo é uma área de aplicação, mas eles continuam usando os módulos anteriores.</div>
+<h3>Primeira vez</h3>
+<div class="passo"><div class="n">1</div><div>Abra o VS Code pelo atalho <b>Projetos e Estudos</b> e entre na pasta do Python All-in-One.</div></div>
+<div class="passo"><div class="n">2</div><div>Abra <code>praticar/cap01_…ipynb</code>, clique em <b>Select Kernel</b> e escolha o <b>.venv</b> desta pasta.</div></div>
+<div class="passo"><div class="n">3</div><div>Rode a Preparação. Deve aparecer <i>Pronto. Python 3.12 | seu pacote: meu_rover</i>.</div></div>
+</section>
+
+<section class="pg"><h2>2. Mapa da trilha (105 passos)</h2>
+<table><tr><th>Cap.</th><th>Missão e entrega</th><th>Passos</th><th>Módulos</th></tr><tr><td>1</td><td><b>Primeiros passos: o painel do rover</b><br><span class='p'>o módulo <code>painel.py</code>, com a função <code>status()</code> que mostra o estado do rover formatado.</span></td><td>8</td><td><code>painel.py</code></td></tr><tr><td>2</td><td><b>Números, texto, datas e fusos horários</b><br><span class='p'>o módulo <code>formatos.py</code>, com funções para formatar leituras e converter horários entre fusos.</span></td><td>8</td><td><code>formatos.py</code></td></tr><tr><td>3</td><td><b>Decisões e repetições: o rover anda pelo mapa</b><br><span class='p'>o módulo <code>navegacao.py</code>, com funções para ler o mapa, achar posições e mover o rover sem bater nas rochas.</span></td><td>6</td><td><code>navegacao.py</code></td></tr><tr><td>4</td><td><b>Listas, tuplas e conjuntos</b><br><span class='p'>o módulo <code>colecoes.py</code>, com o histórico de leituras e a rota até as amostras.</span></td><td>7</td><td><code>colecoes.py</code></td></tr><tr><td>5</td><td><b>Dicionários: o catálogo da missão</b><br><span class='p'>o módulo <code>catalogo.py</code>, com o catálogo de amostras indexado por id e agrupado por tipo.</span></td><td>8</td><td><code>catalogo.py</code></td></tr><tr><td>6</td><td><b>Funções: comandos reutilizáveis</b><br><span class='p'>o módulo <code>calculos.py</code>, com estatísticas, consumo de bateria e conversões, todos documentados.</span></td><td>8</td><td><code>calculos.py</code></td></tr><tr><td>7</td><td><b>Classes e herança: os sensores do rover</b><br><span class='p'>o módulo <code>sensores.py</code>, com a hierarquia de sensores que os próximos capítulos usam.</span></td><td>6</td><td><code>sensores.py</code></td></tr><tr><td>8</td><td><b>Erros sob controle: o rover não pode travar</b><br><span class='p'>o módulo <code>comandos.py</code>, que interpreta comandos de texto da Terra com exceções próprias e registro de falhas.</span></td><td>6</td><td><code>comandos.py</code></td></tr><tr><td>9</td><td><b>Arquivos, CSV e JSON: o diário de bordo</b><br><span class='p'>o módulo <code>diario.py</code>, que salva e carrega telemetria (CSV) e configuração (JSON).</span></td><td>8</td><td><code>diario.py</code></td></tr><tr><td>10</td><td><b>Internet, bibliotecas e o seu próprio pacote</b><br><span class='p'>o módulo <code>rede.py</code> (cliente do centro de controle) e o pacote do rover com <code>__init__.py</code> exportando as peças principais.</span></td><td>8</td><td><code>rede.py<br>__init__.py</code></td></tr><tr><td>11</td><td><b>Inteligência artificial: uma rede neural do zero</b><br><span class='p'>o módulo <code>neural.py</code> (rede neural de 2 camadas em NumPy) e um modelo que classifica imagens com mais de 90% de acerto.</span></td><td>8</td><td><code>neural.py</code></td></tr><tr><td>12</td><td><b>Ciência de dados: analisando a missão</b><br><span class='p'>o módulo <code>analise.py</code>, que gera, limpa e resume a telemetria, e um relatório com gráficos da missão.</span></td><td>8</td><td><code>analise.py</code></td></tr><tr><td>13</td><td><b>Hardware simulado: LEDs, sensores I2C e motores</b><br><span class='p'>o módulo <code>hardware.py</code>, com GPIO, I2C, PWM, motor DC, servo e motor de passo simulados, e um painel de instrumentos.</span></td><td>8</td><td><code>hardware.py</code></td></tr><tr><td>14</td><td><b>Robótica: o rover autônomo</b><br><span class='p'>os módulos <code>robo.py</code> (interface do robô) e <code>cerebro.py</code> (planejador de missão), e um rover que completa a missão sozinho.</span></td><td>8</td><td><code>robo.py<br>cerebro.py</code></td></tr></table></section>
+
+<section class="pg"><h2>3. Rotina de 60 minutos</h2>
+<div class="linha"><div class="min">0–5 min</div><div>Rode a Preparação e releia o Fechamento da última sessão.</div></div>
+<div class="linha"><div class="min">5–45 min</div><div>Faça 2 a 4 passos. Antes de rodar, escreva numa linha o que você espera que aconteça e compare com o resultado.</div></div>
+<div class="linha"><div class="min">45–55 min</div><div>Mude algo e veja o efeito: o mapa, os limites dos sensores, a taxa de aprendizado da rede, a regra do robô...</div></div>
+<div class="linha"><div class="min">55–60 min</div><div>Preencha o Fechamento e faça commit + Sync no VS Code.</div></div>
+<h3>Para ir além (desafios)</h3>
+<ul><li>Desenhe um mapa maior em <code>comum/dados.py</code> e veja se o cérebro ainda completa a missão.</li>
+<li>Faça o rover voltar à base quando a bateria ficar crítica no meio da coleta.</li>
+<li>Troque o <code>RandomForest</code> do capítulo 14 pela sua <code>RedeNeural</code> do capítulo 11.</li>
+<li>Com um Raspberry Pi em mãos, reescreva só o <code>hardware.py</code> com a biblioteca <code>gpiozero</code>: o resto do rover não muda.</li></ul>
+<div class="box dica">Livro: <code>Downloads/Telegram Desktop/Python_All_In_One_For_Dummies.pdf</code>. As páginas indicadas nos cadernos são as do PDF.</div>
+</section>
+</body></html>

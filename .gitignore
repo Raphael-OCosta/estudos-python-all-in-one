@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pdf
+!Guia_de_Estudos.pdf
+gabarito_rover/
+saidas/

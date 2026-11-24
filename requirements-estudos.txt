@@ -1,0 +1,9 @@
+ipykernel
+pip
+numpy
+pandas
+matplotlib
+scikit-learn
+nbclient
+nbformat
+tzdata
